@@ -1,11 +1,17 @@
 
 <template >
   <Header/>
+  <main>
+    <Hero/>
+    <Projects/>
+  </main>
 </template>
 
-  <script setup lang="ts">
+<script setup lang="ts">
   import Header from "./components/Header.vue";
-  </script>
+  import Hero from "./components/Hero.vue";
+  import Projects from "./components/Projects.vue";
+</script>
 
 
 <style scoped>
