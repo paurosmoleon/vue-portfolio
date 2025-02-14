@@ -27,6 +27,16 @@ const projects = ref([
 
 const currentIndex = ref(0)
 
+const nextProject = () => {
+  if(currentIndex.value < projects.value.length -1){
+    currentIndex.value++
+  }
+}
+const lastProject = () => {
+  if(currentIndex.value > 0){
+    currentIndex.value--
+  }
+}
 
 </script>
 
@@ -38,7 +48,7 @@ const currentIndex = ref(0)
         <span class="text-teal-400">Projects</span>
       </h2>
       <div class="flex flex-row items-center">
-      <button class="w-10 h-10 text-lg bg-gray-800 text-white rounded-full" @click="currentIndex--" ><</button>
+      <button class="w-10 h-10 text-lg bg-gray-800 text-white rounded-full" @click="lastProject()" ><</button>
       <div class="text-white">
         <div class="flex justify-around items-center">
           <img class="w-1/3 rounded-2xl" :src="projects[currentIndex].image" alt="">
@@ -59,7 +69,7 @@ const currentIndex = ref(0)
           
           </div>
       </div>
-      <button class="w-10 h-10 text-lg bg-gray-800 text-white rounded-full" @click="currentIndex++">></button>
+      <button class="w-10 h-10 text-lg bg-gray-800 text-white rounded-full" @click="nextProject()">></button>
     </div>
     </div>
 
