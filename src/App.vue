@@ -1,10 +1,12 @@
 
 <template >
   <Header/>
-  <main>
+  <main >
     <Hero/>
-    <Projects/>
-    <Skills/>
+    <div class="bg-[#0f0f0f]">      
+      <Projects/>
+      <Skills/>
+    </div>
   </main>
 </template>
 

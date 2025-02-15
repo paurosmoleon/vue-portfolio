@@ -42,7 +42,7 @@ const lastProject = () => {
 
 
 <template>
-  <section class="py-20  bg-[#0f0f0f] ">
+  <section class="py-20 ">
     <div class="container h-5/6 mx-auto flex flex-col justify-center items-center">
       <h2 class="text-5xl font-bold  text-white pb-10">Featured
         <span class="text-teal-400">Projects</span>
@@ -56,11 +56,11 @@ const lastProject = () => {
             <h3 class="font-bold text-center text-3xl">{{ projects[currentIndex].title }}</h3>
             <p>{{ projects[currentIndex].description }}</p>
             <ul class="h-10 flex justify-evenly">
-              <li class="bg-cyan-700 bg-opacity-30  rounded-full text-teal-300 font-semibold py-2 px-3"  v-for="tech in projects[currentIndex].techs">
+              <li class="bg-gray-800 bg-opacity-70  rounded-full text-sky-400 font-semibold py-2 px-3 border border-sky-400"  v-for="tech in projects[currentIndex].techs">
                 {{ tech }}
               </li>
             </ul>
-            <button class=" w-1/2  bg-teal-400 text-black font-bold py-3 px-8 rounded-lg hover:bg-opacity-80 transition duration-300">View Project</button>
+            <button class=" w-32 h-8 bg-cyan-400 text-black font-bold  text-center rounded-md hover:bg-opacity-80 transition duration-300 text-base ">View Project</button>
           </div>
           
         </div>
