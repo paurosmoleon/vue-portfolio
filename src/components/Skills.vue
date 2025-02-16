@@ -38,19 +38,19 @@ const selectTech = (button:  { id: number; text: string; tech: string[]; }) => {
 </script>
 
 <template>
-  <section class="py-32 h-3/4 flex flex-col items-center justify-center">
+  <section id="Skills" class="py-32 h-3/4 md:w-auto  w-[390px] flex flex-col items-center justify-center">
     <div class="container flex flex-col items-center">
-      <h2 class="text-5xl font-bold text-white pb-10">
-        Featured
-        <span class="text-teal-400">Projects</span>
+      <h2 class="text-5xl text-center font-bold text-white pb-10">
+        Technical 
+        <span class="text-teal-400">Expertise</span>
     </h2>
-        <div class="mt-5 w-2/6 text-white flex  flex-row justify-evenly items-center">
+        <div class="mt-5 md:w-2/6 w-full text-white md:flex  md:flex-row md:justify-evenly md:items-center grid grid-cols-2 gap-y-5">
         
-          <button :class="[' py-2 px-3 rounded-full', techSelected == button ? ' bg-cyan-400 text-black' : 'bg-slate-800 text-white']" v-for="button in buttons" :key="button.id" @click="selectTech(button)" >{{ button.text }}</button>
+          <button :class="['py-2 md:w-auto mx-auto w-1/2 px-3 rounded-full', techSelected == button ? ' bg-cyan-400 text-black' : 'bg-slate-800 text-white']" v-for="button in buttons" :key="button.id" @click="selectTech(button)" >{{ button.text }}</button>
           
         </div>
-        <div :class="['text-white grid  gap-10  pt-16',button.tech.length < 3 ? 'grid-cols-2':'grid-cols-3' ] " v-for="button in buttons" v-show="techSelected === button">
-              <span class=" py-3 w-48 bg-slate-800 rounded-lg flex flex-row items-center justify-evenly font-semibold"  v-for="tech in button.tech" >
+        <div :class="['text-white min-h-60 grid  gap-10  pt-16 grid-cols-1',button.tech.length < 3 ? 'md:grid-cols-2':'md:grid-cols-3' ] " v-for="button in buttons" v-show="techSelected === button">
+              <span class=" py-3 w-48 h-14 bg-slate-800 rounded-lg flex flex-row items-center justify-evenly font-semibold animationTech"  v-for="tech in button.tech" >
                 <img :src="icons[tech]" alt="tech" class="w-5 h-5">
                 {{ tech }}
               </span>
@@ -58,3 +58,22 @@ const selectTech = (button:  { id: number; text: string; tech: string[]; }) => {
     </div>
   </section>
 </template>
+
+
+
+<style scoped>
+  .animationTech{
+    animation: techsAnimation 0.5s ease-in-out;
+  }
+
+  @keyframes techsAnimation {
+    from {
+       transform: translateY(-100%);
+       opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>
