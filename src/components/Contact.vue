@@ -53,10 +53,10 @@ const messageToats = () => {
         Let's  
         <span class="text-teal-400">Connect</span>
          </h2>
-        <div class="container grid md:grid-cols-2 grid-cols-1  text-white ">
+        <div class="container grid md:grid-cols-2  grid-cols-1  text-white ">
             <div class="w-full flex flex-col justify-center items-center ">
                 <h3 class="text-xl pb-8 ">Contact Information</h3>
-              <div class=" flex flex-col     gap-9">
+              <div class=" flex flex-col md:items-start items-center    gap-9">
                 <span class="bg-[#1a1a1a] flex flex-row justify-around w-52 p-3 rounded-lg text-neutral-100 ">
                     <img src="/Contacts/user.svg" class="w-5 h-5" alt="">
                      Pau Ros Moleon

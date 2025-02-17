@@ -30,11 +30,15 @@ const currentIndex = ref(0)
 const nextProject = () => {
   if(currentIndex.value < projects.value.length -1){
     currentIndex.value++
+  } else {
+    currentIndex.value = 0
   }
 }
 const lastProject = () => {
   if(currentIndex.value > 0){
     currentIndex.value--
+  } else {
+    currentIndex.value = projects.value.length
   }
 }
 
@@ -43,20 +47,20 @@ const lastProject = () => {
 
 <template>
   <section id="Projects" class="py-20 md:w-auto w-[390px]  text-center ">
-    <div  class="container h-5/6 mx-auto flex flex-col justify-center items-center ">
+    <div  class="container h-5/6 mx-auto flex flex-col justify-center items-center  ">
       <h2 class="text-5xl font-bold  text-white pb-10">Featured
         <span class="text-teal-400">Projects</span>
       </h2>
       <div class="flex flex-row   items-center">
-      <button :class="['w-10 h-10 md:block hidden text-lg bg-gray-800 text-white rounded-full transition-all duration-500',currentIndex > 0 ? '' : 'disabled brightness-50' ]" @click="lastProject()" ><</button>
-      <div class="text-white ">
-        <div class="flex md:flex-row  flex-col justify-around items-center ">
+      <button class="w-10 h-10 md:block hidden text-lg bg-gray-800 text-white rounded-full transition-all duration-500" @click="lastProject()" ><</button>
+      <div class="text-white" >
+        <div class="flex md:flex-row  flex-col justify-around items-center opacityProject " v-for="project in projects" v-show="project === projects[currentIndex]">
           <img class="w-1/3 rounded-2xl " :src="projects[currentIndex].image" alt="">
           <div class=" flex flex-col gap-10  ">
-            <h3 class="font-bold text-center md:pt-0 pt-5 text-3xl">{{ projects[currentIndex].title }}</h3>
-            <p class="text-pretty w-fit">{{ projects[currentIndex].description }}</p>
+            <h3 class="font-bold text-center md:pt-0 pt-5 text-3xl">{{ project.title }}</h3>
+            <p class="text-pretty w-fit">{{ project.description }}</p>
             <ul class="h-10 flex justify-evenly">
-              <li class="bg-gray-800 bg-opacity-70  rounded-full text-sky-400 font-semibold py-2 px-3 border border-sky-400"  v-for="tech in projects[currentIndex].techs">
+              <li class="bg-gray-800 bg-opacity-70  rounded-full text-sky-400 font-semibold py-2 px-3 border border-sky-400"  v-for="tech in project.techs">
                 {{ tech }}
               </li>
             </ul>
@@ -67,14 +71,14 @@ const lastProject = () => {
         
         <div  class="flex flex-row items-center justify-center pt-6 gap-4">
           
-            <button :class="['w-10 h-10 md:hidden block text-lg bg-gray-800 text-white rounded-full transition-all duration-500',currentIndex > 0 ? '' : 'disabled brightness-50' ]" @click="lastProject()" ><</button>
+            <button class="w-10 h-10 md:hidden block text-lg bg-gray-800 text-white rounded-full transition-all duration-500" @click="lastProject()" ><</button>
             
             <div :class="['w-4 h-4  rounded-full transition-all duration-500', currentIndex === projectCurrent.id - 1 ? 'bg-teal-400 scale-125':'bg-gray-500']" v-for="projectCurrent in projects" :key="projectCurrent.id"></div>
-            <button :class="['w-10 h-10 text-lg bg-gray-800 md:hidden block text-white rounded-full',currentIndex < projects.length -1 ? '' :'disabled brightness-50']" @click="nextProject()">></button>
+            <button class="w-10 h-10 text-lg bg-gray-800 md:hidden block text-white rounded-full" @click="nextProject()">></button>
     
           </div>
       </div>
-      <button :class="['w-10 h-10 text-lg bg-gray-800 md:block hidden text-white rounded-full',currentIndex < projects.length -1 ? '' :'disabled brightness-50']" @click="nextProject()">></button>
+      <button class="w-10 h-10 text-lg bg-gray-800 md:block hidden text-white rounded-full" @click="nextProject()">></button>
     </div>
     </div>
 
@@ -83,3 +87,19 @@ const lastProject = () => {
 </template>
 
 
+
+<style scoped>
+
+  .opacityProject{
+    animation: opacityProjects 1.25s ease-in-out;
+  }
+
+  @keyframes opacityProjects{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
