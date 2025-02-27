@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const {t} = useI18n()
+
 
 const projects = ref([
   {
@@ -48,12 +52,12 @@ const lastProject = () => {
 <template>
   <section id="Projects" class="py-20 md:w-auto w-[390px]  text-center ">
     <div  class="container h-5/6 mx-auto flex flex-col justify-center items-center  ">
-      <h2 class="text-5xl font-bold  text-white pb-10">Featured
-        <span class="text-teal-400">Projects</span>
+      <h2 class="text-5xl font-bold  text-white pb-10">{{ $t('projectTitle1')}}
+        <span class="text-teal-400">{{ $t('projectTitle2')}}</span>
       </h2>
       <div class="flex flex-row   items-center">
       <button class="w-10 h-10 md:block hidden text-lg bg-gray-800 text-white rounded-full transition-all duration-500" @click="lastProject()" ><</button>
-      <div class="text-white" >
+      <div class="text-white md:max-w-5xl" >
         <div class="flex md:flex-row  flex-col justify-around items-center opacityProject " v-for="project in projects" v-show="project === projects[currentIndex]">
           <img class="w-1/3 rounded-2xl " :src="projects[currentIndex].image" alt="">
           <div class=" flex flex-col gap-10  ">

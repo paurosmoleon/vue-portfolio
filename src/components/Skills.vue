@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const {t} = useI18n()
 
 const icons: Record<string,string> = {
   //Iconos front
@@ -41,8 +44,8 @@ const selectTech = (button:  { id: number; text: string; tech: string[]; }) => {
   <section id="Skills" class="py-32 h-3/4 md:w-auto  w-[390px] flex flex-col items-center justify-center">
     <div class="container flex flex-col items-center">
       <h2 class="text-5xl text-center font-bold text-white pb-10">
-        Technical 
-        <span class="text-teal-400">Expertise</span>
+        {{ $t('skillsTitle1') }} 
+        <span class="text-teal-400">{{ $t('skillsTitle2') }}</span>
     </h2>
         <div class="mt-5 md:w-2/6 w-full text-white md:flex  md:flex-row md:justify-evenly md:items-center grid grid-cols-2 gap-y-5">
         
