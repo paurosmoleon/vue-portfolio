@@ -5,7 +5,7 @@ const {t} = useI18n()
 </script>
 
 <template>
-    <section id="About" class="md:w-5/6 w-full  pt-24 pb-32 z-0 mx-auto">
+    <section id="About" class="md:w-5/6 w-full  md:pt-24 pt-32 pb-32 z-0 mx-auto">
         <div class="container  h-3/6  md:mx-auto  py-4">
             <div class="flex flex-row  items-center  md:w-auto w-screen md:text-start  text-center justify-evenly  gap-12 ">
                 <div class="space-y-12 ">
@@ -14,13 +14,13 @@ const {t} = useI18n()
                      </div>
                     <h1 class="text-5xl font-bold  text-white">{{ $t('welcome') }} <span class="text-teal-400"> Pau Ros
                             Moleon</span></h1>
-                    <h2 class="text-3xl text-gray-400">{{ $t('devZone') }}</h2>
-                    <p className="text-lg text-gray-300 text-pretty">
+                    <h2 class="text-3xl text-gray-400 w-max m-auto">{{ $t('devZone') }}</h2>
+                    <p className="text-lg text-teal-50 text-pretty  max-w-96 m-auto  ">
                       {{ $t('heroText') }}
                     </p>
                     <div class="flex flex-row md:justify-start justify-center space-x-4">
                         <a href="#Contact"
-                            className="bg-teal-400 text-black font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition duration-300">
+                            className="bg-teal-400 text-black  font-bold py-3 md:px-8 px-4  rounded-full hover:bg-opacity-80 transition duration-300">
                             {{ $t('heroButton1') }}
                         </a>
                         <a href="#Projects"

@@ -20,10 +20,10 @@ const setLanguage = (ev:Event) =>  {
 </script>
 
 <template>
-    <header class="w-screen fixed bg-[#0a0a0a] bg-opacity-80 backdrop-blur-md    py-5 md:px-10 px-5 flex flex-row justify-between items-center text-neutral-50 font-mono z-10">
+    <header class="w-screen  fixed bg-[#0a0a0a] bg-opacity-80 backdrop-blur-md md:py-5 md:px-10  flex md:flex-row flex-col  justify-between items-center  text-neutral-50 font-mono z-10">
+        
        
-       
-        <div class="flex flex-row gap-6">
+        <div class="flex flex-row  md:gap-6">
             <a class="cursor-pointer hidden md:block" href="#About">
                 <img src="/LogoHeader.svg" width="40" height="40" class=" hover:scale-125 transition-transform" alt="icon header">
             </a>
@@ -39,7 +39,7 @@ const setLanguage = (ev:Event) =>  {
        
             
     </div>
-        <ul class="md:w-auto w-full flex flex-row justify-between p-0  text-lg md:gap-10 ">
+        <ul class="md:w-auto w-full md:flex md:flex-row md:justify-between grid grid-cols-2 place-items-center text-center p-0  text-lg md:gap-10 ">
             <li><a href="#About" class="hover:text-teal-300 transition-colors duration-300 font-medium">{{ $t('aboutHeader') }}</a></li>
             <li><a href="#Projects" class="hover:text-teal-300 transition-colors duration-300 font-medium">{{ $t('projectsHeader') }}</a></li>
             <li><a href="#Skills" class="hover:text-teal-300 transition-colors duration-300 font-medium">{{ $t('skillsHeader') }}</a></li>

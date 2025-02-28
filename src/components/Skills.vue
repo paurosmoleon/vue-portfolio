@@ -21,7 +21,6 @@ const icons: Record<string,string> = {
   //Icons DevOps
   'Git': '/techs/git.svg',
   'Docker': '/techs/docker.svg'
-
 }
 
 const buttons = ref([

@@ -49,8 +49,8 @@ const messageToats = () => {
 
 
 <template>
-    <section id="Contact" class="py-32 h-3/4 md:w-auto  w-[390px] flex flex-col items-center justify-center">
-        <h2 class="text-5xl font-bold text-white pb-10">
+    <section id="Contact" class="py-32 h-3/4 md:w-auto  w-screen flex flex-col items-center justify-center">
+        <h2 class="text-5xl text-center m-auto font-bold text-white pb-10">
         {{ $t('contactTitle1')}} 
         <span class="text-teal-400">{{ $t('contactTitle2')}} </span>
          </h2>
@@ -83,7 +83,7 @@ const messageToats = () => {
                 <form @submit.prevent="sendMessage" method="post" class="flex flex-col gap-5">
                     <input type="text" name="name" v-model="form.name" placeholder="Your name" class="px-4 py-3 bg-[#1a1a1a] rounded-lg  text-white  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 " required>
                     <input type="email" name="email" v-model="form.email" id="email_input"  placeholder="Your email" class="px-4 py-3 bg-[#1a1a1a] rounded-lg  text-white  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 " required>
-                    <textarea name="message" v-model="form.message"  cols="50" rows="4" placeholder="Your Message" class="p-2 bg-[#1a1a1a] rounded-lg  text-white  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 resize-y" required></textarea>
+                    <textarea name="message" v-model="form.message"  cols="50"  rows="5" placeholder="Your Message" class="p-2 bg-[#1a1a1a] rounded-lg  text-white  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none"  required></textarea>
                     <button type="submit"  class="p-4 bg-sky-400 rounded-lg text-neutral-950 font-bold active:opacity-80" >{{ $t('contactButton') }}</button>
                 </form>
             </div>

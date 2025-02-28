@@ -16,7 +16,7 @@ export const messages = {
         contactTitle1: "Let's ",
         contactTitle2: "Connect 🌍",
         contactInfo: "Contact Information 📬",
-        contactMessage: "Got an idea or a project? Send me a message and let's talk! 😊",
+        contactMessage: "Like what you see? Drop me a message and let's chat! 😊",
         downloadCV: "Download CV",
         contactButton: "Send Message",
         reserved: "©2025 All rights reserved"
@@ -38,7 +38,7 @@ export const messages = {
       contactTitle1: "Vamos a ",
       contactTitle2:"Conectar 🌍",
       contactInfo: "Información de contacto 📬",
-      contactMessage: "¿Tienes una idea o un proyecto? ¡Envíame un mensaje y hablemos! 😊",
+      contactMessage: "¿Te gustó lo que viste? ¡Escríbeme y charlamos! 😊",
       downloadCV: "Descargar CV ",
       contactButton: "Enviar mensaje",
       reserved: "©2025 Todos los derechos reservados"
